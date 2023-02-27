@@ -1,35 +1,22 @@
-from imutils.video import VideoStream
 import numpy as np
-import argparse
-import imutils
 import time
 import cv2
 
-ap = argparse.ArgumentParser()
-ap.add_argument('-c', '--confidence', type=float, default=0.5, help="minimum probability to filter weak detections")
-args = vars(ap.parse_args())
-
-
-print("[INFO] Loading Model .... ")
+min_confidence = 0.4
 net = cv2.dnn.readNetFromCaffe("models/deploy.prototxt.txt", "models/res10_300x300_ssd_iter_140000.caffemodel")
-
-print("[INFO] Starting video stream .... ")
-vs = VideoStream(src=0).start()
+cap = cv2.VideoCapture(0)
 
 time.sleep(2.0)
 
 while True:
-    frame = vs.read()
-    frame = imutils.resize(frame, width = 400)
-
+    ret, frame = cap.read()
     (h, w) = frame.shape[:2]
     blob = cv2.dnn.blobFromImage(cv2.resize(frame, (300,300)), 1.0, (300,300), (104.0, 177.0, 123.0))
     net.setInput(blob)
     detections = net.forward()
-
     for i in range(0, detections.shape[2]):
         confidence = detections[0,0,i,2 ]
-        if confidence < args["confidence"]:
+        if confidence < min_confidence:
             continue
         box = detections[0,0,i, 3:7] * np.array([w,h,w,h])
         (startX, startY, endX, endY) = box.astype("int")
@@ -45,6 +32,5 @@ while True:
     if key == ord("q"):
         break
 
+cap.release()
 cv2.destroyAllWindows()
-vs.stop()
-
