@@ -6,11 +6,10 @@ from discord.ext.commands import Bot
 # client = discord.Client(intents=discord.Intents.all())
 intents = discord.Intents.default()
 intents.message_content = True
-
 client = discord.Client(intents=intents)
 
 sad_words = ["sad", "depressed", "angry", "hurting", "stressed"]
-
+ 
 happy_words = ["happy", "glad", "joyfull", "satisfied", "blessed"]
 
 encouragements = [
@@ -66,4 +65,5 @@ async def on_message(message):
         response = random.choice(happy_responses)
         await message.channel.send(response)
 
-client.run("OTg2NDcyMzI1NTIyMjU5OTg4.GP6blh.-8A8UycFh9B6fvokFDBaq_z85jWQmRR99bd_3w")
+# client.run("OTg2NDcyMzI1NTIyMjU5OTg4.GP6blh.-8A8UycFh9B6fvokFDBaq_z85jWQmRR99bd_3w")
+client.run("OTg2NDcyMzI1NTIyMjU5OTg4.GJPycz.W_yyF4qHNOj2h2VX5c-xstNus0Azc6eynD3t_E")
