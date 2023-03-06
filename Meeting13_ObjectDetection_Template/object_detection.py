@@ -13,6 +13,7 @@ image = cv2.imread('images/1.jpg')
 image = cv2.resize(image, (800, 600))
 # Tambahkan code di bawah ini
 height, width = image.shape[0], image.shape[1]
+# CODE YANG LAIN
 blob = cv2.dnn.blobFromImage(cv2.resize(image, (300, 300)), 0.007843, (300, 300), 127.5)
 net.setInput(blob)
 detected_objects = net.forward()
