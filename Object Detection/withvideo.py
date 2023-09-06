@@ -3,14 +3,14 @@ import cv2
 
 min_confidence = 0.6
 
-prototxt_path = 'models/MobileNetSSD_deploy.prototxt.txt'
-model_path = 'models/MobileNetSSD_deploy.caffemodel'
+
 
 classes = ['background', 'aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car', 'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike', 'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor']
 
 np.random.seed(543210)
 colors = np.random.uniform(0, 255, size=(len(classes), 3))
-
+prototxt_path = 'models/MobileNetSSD_deploy.prototxt.txt'
+model_path = 'models/MobileNetSSD_deploy.caffemodel'
 net = cv2.dnn.readNetFromCaffe(prototxt_path, model_path)
 image = cv2.imread('8.jpg')
 image = cv2.resize(image, (1200, 600))
@@ -48,6 +48,6 @@ while True:
     cv2.imshow('image', image)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-    
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()

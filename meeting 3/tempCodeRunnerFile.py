@@ -1,2 +1,1 @@
-
-while True:
+score = 90

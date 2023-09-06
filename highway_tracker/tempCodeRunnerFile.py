@@ -1,2 +1,2 @@
-
-    cv2.imshow("Frame", frame)
+            cx = (x + x + w) // 2
+            cy = (y + y + h) // 2

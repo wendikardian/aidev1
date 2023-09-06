@@ -12,7 +12,7 @@ np.random.seed(543210)
 colors = np.random.uniform(0, 255, size=(len(classes), 3))
 
 net = cv2.dnn.readNetFromCaffe(prototxt_path, model_path)
-image = cv2.imread('8.jpg')
+image = cv2.imread('images/3.jpg')
 image = cv2.resize(image, (1200, 600))
 height, width = image.shape[0], image.shape[1]
 blob = cv2.dnn.blobFromImage(cv2.resize(image, (300, 300)), 0.007843, (300, 300), 127.5)

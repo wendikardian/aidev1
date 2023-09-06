@@ -12,9 +12,9 @@ np.random.seed(543210)
 colors = np.random.uniform(0, 255, size=(len(classes), 3))
 
 net = cv2.dnn.readNetFromCaffe(prototxt_path, model_path)
-image = cv2.imread('8.jpg')
-image = cv2.resize(image, (1200, 600))
-height, width = image.shape[0], image.shape[1]
+# image = cv2.imread('8.jpg')
+# image = cv2.resize(image, (1200, 600))
+# height, width = image.shape[0], image.shape[1]
 
 
 cap = cv2.VideoCapture(0)
@@ -48,6 +48,6 @@ while True:
     cv2.imshow('image', image)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-    
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()

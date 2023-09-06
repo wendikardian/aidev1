@@ -9,7 +9,7 @@ intents.message_content = True
 client = discord.Client(intents=intents)
 
 sad_words = ["sad", "depressed", "angry", "hurting", "stressed"]
- 
+
 happy_words = ["happy", "glad", "joyfull", "satisfied", "blessed"]
 
 encouragements = [
@@ -43,21 +43,15 @@ songs = [
 
 @client.event
 async def on_message(message):
-    print(message)
-    print(message.content)
     if message.author == client.user:
         return
-    test = True
-    # if test:
-    #     await message.channel.send('Test on !! ')
-    #     test = False
     if message.content.startswith('!hi'):
         await message.channel.send("Hello")
     elif message.content.startswith('!turu'):
         await message.channel.send('https://media.tenor.com/xBCIftNkf4wAAAAj/sleep.gif')
     elif message.content.startswith('!random song'):
         await message.channel.send(random.choice(songs))
-    
+
     if any(word in message.content for word in sad_words):
         response = random.choice(encouragements)
         await message.channel.send(response)
@@ -66,4 +60,4 @@ async def on_message(message):
         await message.channel.send(response)
 
 # client.run("OTg2NDcyMzI1NTIyMjU5OTg4.GP6blh.-8A8UycFh9B6fvokFDBaq_z85jWQmRR99bd_3w")
-client.run("OTg2NDcyMzI1NTIyMjU5OTg4.GJPycz.W_yyF4qHNOj2h2VX5c-xstNus0Azc6eynD3t_E")
+client.run("OTg2NDcyMzI1NTIyMjU5OTg4.GZHH3U.VyB47RBa071yvBamDxSd1HGA2hX-0KJooCx14A")

@@ -5,6 +5,7 @@ min_confidence = 0.6
 net = cv2.dnn.readNetFromCaffe("models/deploy.prototxt.txt", "models/res10_300x300_ssd_iter_140000.caffemodel")
 # cap = cv2.VideoCapture(0)
 cap = cv2.VideoCapture("vid.mp4")
+
 while True:
     ret, frame = cap.read()
     height, width = frame.shape[0], frame.shape[1]
