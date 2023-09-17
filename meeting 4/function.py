@@ -1,4 +1,3 @@
-
 # number = [50, 79, 20,67,54, 100]
 # print(max(number))
 # print(min(number))
@@ -18,17 +17,19 @@
 price = 100
 name = "Fathir"
 
+
 def order_pizza(total):
     # price = 10
     name = "wendi"
     total_price = total * price
-    print("Total harga : " + str(total_price) )
+    print("Total harga : " + str(total_price))
     # if total_price > 100:
     #     print("Kamu dapat diskon 10%")
     #     total_price = total_price * 0.9
     #     print("Total harga : " + str(total_price) )
     # else:
     #     print("Kamu tidak dapat diskon")
+
 
 # print(price)
 # print(name)
