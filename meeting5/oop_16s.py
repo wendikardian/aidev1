@@ -7,7 +7,6 @@ class Laptop:
 
     def coding(self):
         print("Coding in progress...")
-        # self.RAM -= 1
         self.RAM -= 1
         print(self.brand + " is on coding process" )
         print("Remaining RAM : " + str(self.RAM))

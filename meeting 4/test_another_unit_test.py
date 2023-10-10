@@ -33,7 +33,7 @@ class TestUser(unittest.TestCase):
         db = koneksi_ke_db()
         dicoding = User(db, "dicoding")
         dicoding.set_aktif()  # aktifkan user baru
-        self.assertTrue(dicoding.aktif)
+        self.assertTrue(dicoding.aktif)z
         putus_koneksi_db(db)
 
 
