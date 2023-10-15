@@ -12,5 +12,19 @@ print(Array2D[0, 2])
 
 data = np.array([[1,2,3,4], 
                  [5,6,7,8]])
-print(data.shape)
-print(data[0, 3])
+
+print(data[:, 2])
+
+print(data[1, :])
+
+print(data[:, 1:3])
+
+
+print(data[1, 1:4])
+
+
+empty = np.zeros((4,4), dtype="int")
+
+empty[0, 1:4] = [1,55,3]
+
+print(empty)
